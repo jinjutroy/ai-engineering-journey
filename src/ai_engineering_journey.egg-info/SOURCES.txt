@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/ai_engineering_journey.egg-info/PKG-INFO
+src/ai_engineering_journey.egg-info/SOURCES.txt
+src/ai_engineering_journey.egg-info/dependency_links.txt
+src/ai_engineering_journey.egg-info/requires.txt
+src/ai_engineering_journey.egg-info/top_level.txt
+src/ai_journey/__init__.py
+src/ai_journey/attention.py
+src/ai_journey/autodiff.py
+src/ai_journey/linear_regression.py
+tests/test_attention.py
+tests/test_autodiff.py
+tests/test_linear_regression.py

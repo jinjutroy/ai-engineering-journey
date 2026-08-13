@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: ai-engineering-journey
+Version: 0.1.0
+Summary: From-first-principles AI engineering learning laboratory
+Requires-Python: >=3.11
+Requires-Dist: numpy<3,>=1.26
+Provides-Extra: dev
+Requires-Dist: pytest<9,>=8; extra == "dev"
+Requires-Dist: ruff<1,>=0.6; extra == "dev"
+Provides-Extra: later
+Requires-Dist: matplotlib<4,>=3.8; extra == "later"
+Requires-Dist: pandas<3,>=2.2; extra == "later"
+Requires-Dist: torch<3,>=2.3; extra == "later"
