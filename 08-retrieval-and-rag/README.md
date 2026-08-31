@@ -1,10 +1,36 @@
 # Phase 08 — Retrieval and RAG
 
-## Seven-dimension map
+## Purpose
 
-**WHAT:** retrieval finds evidence relevant to an information need; RAG conditions generation on retrieved evidence. **WHY:** model parameters are lossy, stale, and difficult to attribute. **WHEN:** use for dynamic or private knowledge and evidence-backed answers; avoid when the corpus is not authoritative or deterministic lookup suffices. **WHERE:** between request understanding and generation. **WHO:** indexers produce searchable representations; retrievers/rerankers select evidence; generators and users consume it. **HOW:** study lexical scoring, embeddings, approximate nearest neighbors, chunking, metadata filters, reranking, context construction, and separate retrieval/generation evaluation. **FAILURE:** missing/poisoned corpus, bad chunk boundaries, embedding drift, filter bugs, recall loss, citation mismatch, prompt injection inside documents, access-control leaks, and generators ignoring evidence.
+Treat RAG as an information-retrieval system with a generation component, not
+as `embedding → vector database → LLM`.
 
-## Exit gate
+## WHAT / WHY / WHEN / WHERE / WHO
 
-Build a small sparse and dense retriever, evaluate recall independently, compare with a no-retrieval baseline, trace citations to exact chunks, and defend trust boundaries.
+Retrieval supplies external evidence when model parameters are stale, lossy, or
+not attributable. Use it for dynamic/private knowledge and evidence-backed
+answers; do not use it to disguise an unauthoritative corpus or replace a
+deterministic lookup. Indexers, retrievers, rankers, access-control filters,
+context builders, generators, and evaluators own different boundaries.
 
+## HOW
+
+Implement and measure `documents → parsing → chunking → indexing → candidate
+retrieval → ranking/reranking → evidence selection → context construction →
+generation → citation`. Compare lexical, dense, ANN, hybrid, and metadata
+filtering approaches. Track Recall@K, Precision@K, MRR, NDCG, hit rate, answer
+correctness, and citation correctness separately.
+
+## FAILURE
+
+Break parsing, chunk boundaries, embedding choice/drift, filters and ACLs,
+recall, ranking, context dilution, conflicting/stale evidence, poisoned
+documents, citation mismatch, and generators ignoring evidence. Relevance is
+not factual truth.
+
+## VERIFY
+
+Prerequisites: Phase 03 evaluation and Phase 07 token/context mechanics.
+Enables context engineering, evidence handling, and grounded agents. Exit with
+sparse+dense retrieval, no-retrieval baseline, independent retrieval metrics,
+exact citation traces, and a failure-attribution report.

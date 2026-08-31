@@ -2,7 +2,11 @@
 
 ## Learning objective
 
-State the observable capability and prerequisites.
+State the observable capability.
+
+- **Prerequisites:**
+- **Depends on:**
+- **Enables:**
 
 ## WHAT
 
@@ -39,7 +43,16 @@ Include:
 
 Cover incorrect assumptions, data issues, edge cases, numerical stability, performance, reliability, security/privacy, observability gaps, and recovery.
 
-## Implement → Experiment → Break → Debug → Optimize → Apply
+## VERIFY
+
+- Expected behavior / invariant:
+- Simplest credible baseline or correctness oracle:
+- Metric and acceptance threshold:
+- Tests and numerical verification:
+- Deliberate experiment and failure test:
+- Evidence artifact and limitations:
+
+## Implement → Experiment → Break → Debug → Measure → Optimize → Verify → Apply → Document
 
 - Implementation:
 - Hypothesis and experiment:
@@ -47,14 +60,17 @@ Cover incorrect assumptions, data issues, edge cases, numerical stability, perfo
 - Debug evidence:
 - Profile and optimization:
 - Application:
+- Documentation / production implication:
 
 ## Mastery checks
 
 - [ ] Explain and derive from memory
+- [ ] Prerequisites and dependency boundary are clear
 - [ ] Tests and trusted comparison pass
 - [ ] Three failure classes reproduced
 - [ ] Trade-off measured
 - [ ] Delayed reviews completed
+- [ ] Evidence state recorded in `PROGRESS.md`
 
 ## References
 

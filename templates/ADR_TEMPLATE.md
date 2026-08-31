@@ -3,6 +3,7 @@
 - **Status:** proposed | accepted | superseded
 - **Date:**
 - **Decision owners:**
+- **Related phase / evidence:**
 
 ## Context
 
@@ -15,6 +16,13 @@ For each option: mechanism, benefits, costs, failure modes, security/privacy, op
 ## Decision
 
 State the choice and why it best fits the current constraints.
+
+## Verification
+
+- Baseline and metric:
+- Experiment, test, or operational evidence:
+- Failure and rollback test:
+- Assumptions still requiring validation:
 
 ## Consequences
 

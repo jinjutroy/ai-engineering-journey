@@ -1,18 +1,37 @@
-# Phase 12 — Capstones
+# Phase 12 — Progressive Capstones
 
-Capstones prove ownership, not novelty. Each must answer WHAT, WHY, WHEN, WHERE, WHO, HOW, and FAILURE in its design docs and execute the complete learning loop.
+## Purpose
 
-## Required artifacts
+Prove ownership progressively. These projects are stepping stones to the
+graduation system, not a collection of demos or a claim of organizational
+production experience.
 
-Problem and non-AI baseline; requirements/SLOs; architecture and ADRs; dataset card and lineage; reproducible experiments; tested implementation; evaluation by slice with uncertainty; model card; threat model/privacy review; deployment and rollback; telemetry; load/cost report; incident drill and postmortem; retrospective.
+## WHAT / WHY / WHEN / WHERE / WHO
 
-## Projects
+Each capstone integrates the mechanisms learned so far and makes trade-offs
+visible from problem framing to operation. The engineer owns requirements,
+architecture, experiments, failure analysis, and evidence; users and domain
+owners define acceptable outcomes.
 
-1. **Classical prediction service:** structured data, leakage-safe pipeline, calibration, drift, and versioned API.
-2. **Transformer or retrieval system:** from-scratch core mechanism, offline/online evaluation, latency/memory profiling, and evidence tracing.
-3. **Production AI application:** model plus retrieval or bounded tools, authorization, observability, fallback, cost budgets, and adversarial evaluation.
+## HOW
 
-## Exit gate
+1. Classical prediction: leakage-safe pipeline, calibration, drift, versioned API.
+2. Transformer or retrieval: from-scratch core mechanism, offline/online evaluation, latency/memory profiling, evidence tracing.
+3. Production AI application: model plus retrieval or bounded tools, authorization, context/memory, observability, fallback, cost, adversarial tests.
 
-Another engineer can reproduce, operate, diagnose, and safely roll back the system using only repository artifacts. You can defend every major trade-off and identify the next bottleneck from evidence.
+Every project includes a non-AI baseline, requirements/SLOs, ADRs, data lineage,
+reproducible experiments, tests, slice evaluation with uncertainty, model card,
+threat model, deployment/rollback, telemetry, incident drill, and postmortem.
 
+## FAILURE
+
+Do not hide failures behind a polished UI. Include data, model, context,
+retrieval, memory, tool, serving, security, cost, and operational failures with
+root cause and recovery evidence.
+
+## VERIFY
+
+Prerequisites: Phases 03–11 and all cross-cutting tracks. Enables Phase 13.
+Exit when another engineer can reproduce, operate, diagnose, and safely roll
+back the project using repository artifacts and you can defend every major
+trade-off with measurements.

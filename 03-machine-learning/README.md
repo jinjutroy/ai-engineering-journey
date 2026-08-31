@@ -1,28 +1,36 @@
 # Phase 03 — Machine Learning
 
-## Objective
+## Purpose
 
-Design valid learning problems and experiments before seeking sophisticated models.
+Turn a product question into a valid learning experiment before selecting a
+sophisticated model.
 
 ## WHAT / WHY / WHEN / WHERE / WHO
 
-Machine learning estimates patterns from data to predict, rank, cluster, compress, or decide under uncertainty. It is useful where explicit rules do not generalize economically and representative evidence exists. It sits between problem/data definition and a product decision. Domain experts define target meaning; data pipelines produce examples; learners fit parameters; evaluators estimate behavior; services and users consume predictions.
+The core loop is `Data → Representation → Model → Prediction → Loss →
+Optimization → Evaluation → Generalization`. ML is appropriate when
+representative data and a learnable signal exist; explicit rules, lookup, or no
+AI may be safer. Domain owners define target meaning, data pipelines produce
+examples, models estimate parameters, and evaluators estimate behavior.
 
 ## HOW
 
-- `fundamentals/`: task formulation, hypothesis spaces, inductive bias, generalization, bias/variance, regularization, and baselines.
-- `supervised-learning/`: linear/logistic models, trees, ensembles, nearest neighbors, and probabilistic outputs.
-- `unsupervised-learning/`: clustering, dimensionality reduction, anomaly detection, and representation caveats.
-- `model-evaluation/`: splits, cross-validation, metrics, calibration, thresholding, slices, uncertainty, and leakage.
-- `experiments/`: configuration, tracking, reproducibility, ablations, error analysis, and decision records.
-
-Start every task with a non-ML baseline and a leakage-safe pipeline. Separate the training objective, evaluation metric, and business outcome.
+Implement linear regression and logistic regression from primitives, then
+compare with trusted libraries. Cover classification, generative versus
+discriminative modeling, MLE/MAP, splits, baselines, regularization,
+bias/variance, calibration, uncertainty, thresholding, slices, error analysis,
+and business metrics. Separate training objective, evaluation metric, and
+product outcome.
 
 ## FAILURE
 
-Label ambiguity, class imbalance, leakage, duplicate entities across splits, temporal invalidity, selection bias, shortcut features, over-tuning the test set, uncalibrated scores, misleading aggregate metrics, distribution shift, and feedback loops.
+Break label definitions, class balance, temporal splits, entity duplicates,
+leakage, selection bias, shortcut features, test-set over-tuning, calibration,
+aggregate metrics, distribution shift, and feedback loops.
 
-## Exit gate
+## VERIFY
 
-Implement linear and logistic baselines from primitives; compare with a trusted library; conduct slice-based error analysis; quantify uncertainty; and make a ship/no-ship decision from predeclared gates.
-
+Prerequisites: Phase 02 probability, statistics, and optimization. Enables
+neural-network objectives and reliable model selection. Exit with a non-ML
+baseline, from-scratch baselines, leakage audit, slice/error report,
+uncertainty estimate, and evidence-backed ship/no-ship decision.

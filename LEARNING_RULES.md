@@ -6,13 +6,18 @@ The unit of progress is demonstrated capability, not pages read, videos watched,
 
 For each major concept:
 
-1. **Understand** — explain it precisely using the seven-dimension template.
-2. **Implement** — build the smallest correct version with limited dependencies.
-3. **Experiment** — form a falsifiable hypothesis, define controls and metrics, then run it.
-4. **Break** — deliberately violate assumptions and preserve the failure evidence.
-5. **Debug** — localize the cause using assertions, tests, visualizations, and traces.
-6. **Optimize** — improve one measured bottleneck without changing correctness.
-7. **Apply** — use it inside a system where its trade-offs matter.
+1. **Understand** — explain it precisely using the concept template.
+2. **Explain** — reconstruct the mechanism, assumptions, and boundaries without notes.
+3. **Derive** — derive the central equation or algorithm and check dimensions.
+4. **Implement** — build the smallest correct version with limited dependencies.
+5. **Experiment** — form a falsifiable hypothesis, define controls and metrics, then run it.
+6. **Break** — deliberately violate assumptions and preserve the failure evidence.
+7. **Debug** — localize the cause using assertions, tests, visualizations, and traces.
+8. **Measure** — report a baseline, uncertainty, resource use, and acceptance threshold.
+9. **Optimize** — improve one measured bottleneck without changing correctness.
+10. **Verify** — compare with an oracle, regression suite, or numerical check.
+11. **Apply** — use it inside a system where its trade-offs matter.
+12. **Document** — leave reproducible evidence, decisions, and limitations.
 
 ## Non-negotiable rules
 
@@ -26,12 +31,16 @@ For each major concept:
 - Optimize only after profiling; preserve a correctness oracle.
 - Security, privacy, cost, latency, and observability are design inputs, not deployment polish.
 - A framework may be used after you can name its abstraction boundary and escape hatch.
+- Stable mechanisms come before fast-moving vendors, SDKs, and framework APIs.
+- Every new concept records prerequisites, dependencies, and what it enables; do not study an advanced layer with missing foundations.
+- Relevance is not truth, confidence is not correctness, and model output is not verified evidence.
 
 ## Concept completion gate
 
 A concept is complete only when all boxes have evidence:
 
 - [ ] I can explain WHAT, WHY, WHEN, WHERE, WHO, HOW, and FAILURE without notes.
+- [ ] I can state prerequisites, dependencies, and what this concept enables.
 - [ ] I derived the central equation or algorithm and checked dimensions.
 - [ ] I implemented a simplified version and tested it.
 - [ ] I compared it with a trusted implementation or known result.
@@ -40,6 +49,31 @@ A concept is complete only when all boxes have evidence:
 - [ ] I measured one trade-off and justified an optimization.
 - [ ] I applied it in a small end-to-end system.
 - [ ] I can state when not to use it.
+- [ ] I verified expected behavior against a baseline with an explicit metric or invariant.
+- [ ] I know which evidence is fact, observation, inference, hypothesis, unknown, or conflict.
+
+## Evidence states
+
+Use the strongest state honestly earned: `introduced`, `explained`, `derived`,
+`implemented`, `experimented`, `broken`, `debugged`, `measured`,
+`production-aware`, and finally `mastered` after delayed retrieval reviews.
+Reading alone earns only `introduced`.
+
+## Framework boundary
+
+Before adopting a framework, answer: what problem does it solve, what mechanism
+does it abstract, what control is lost, how can it fail, how will we debug below
+the abstraction, and can we implement a minimal version ourselves?
+
+## Overkill control
+
+For every topic ask whether it explains an important mechanism, improves
+debugging, architectural judgment, or production safety. If not, reduce it to
+conceptual awareness or defer it. Do not expand the curriculum merely because a
+computer-science topic exists.
+
+See [MENTOR_RULES.md](MENTOR_RULES.md) for how future teaching requests should
+be handled.
 
 ## Experiment discipline
 

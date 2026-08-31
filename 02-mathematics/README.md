@@ -1,28 +1,36 @@
-# Phase 02 — Mathematics for AI Engineering
+# Phase 02 — Mathematical Foundations for AI Engineering
 
-## Objective
+## Purpose
 
-Build operational mathematics: derive, compute, visualize, and use each concept to debug an implementation.
+Study mathematics through implementation. Every high-priority topic must have
+an explanation, derivation, numerical example, failure case, and application.
+Do not turn this into a pure mathematics degree.
 
 ## WHAT / WHY / WHEN / WHERE / WHO
 
-Linear algebra represents data and transformations; probability models uncertainty; statistics connects samples to populations; calculus describes local change; optimization selects parameters under an objective. Together they form the language connecting data, loss, gradients, training algorithms, and evaluation. Use the minimum mathematical machinery that makes assumptions and trade-offs explicit; do not perform symbolic work detached from an engineering question.
+Linear algebra represents data and transformations; calculus describes change;
+probability and statistics describe uncertainty and evidence; optimization
+selects parameters under an objective; information theory explains predictive
+distributions and coding costs; numerical reliability keeps computation honest.
+These mechanisms connect data to losses, gradients, models, and evaluation.
 
 ## HOW
 
-- `linear-algebra/`: vectors, bases, matrix products, rank, projections, eigenvalues, SVD, norms, and conditioning.
-- `probability/`: random variables, conditional probability, Bayes, expectation, variance, common distributions, and Monte Carlo.
-- `statistics/`: estimators, sampling, intervals, hypothesis tests, effect size, multiple comparisons, and bootstrap.
-- `calculus/`: derivatives, partials, gradients, Jacobians, chain rule, and computational graphs.
-- `optimization/`: convexity intuition, gradient methods, momentum, adaptive methods, constraints, and learning-rate behavior.
-
-Every topic follows: hand calculation → NumPy verification → deliberate numerical failure → application to a model.
+- Linear algebra: vectors, bases, matrices, transformations, products, norms, projections, rank, eigenpairs, SVD, conditioning.
+- Calculus: functions, limits, derivatives, partials, gradients, Jacobians, Hessians, chain rule, autodiff, finite differences.
+- Probability/statistics: conditional probability, distributions, expectation, covariance, Bayes, MLE/MAP, estimators, sampling, intervals, testing, generalization.
+- Optimization: objectives, constraints, convexity intuition, GD/SGD, momentum, Adam, regularization, saddle points, learning-rate behavior.
+- Information/numerics: entropy, cross-entropy, KL, mutual information, floating point, FP32/FP16/BF16, overflow/underflow, stability.
 
 ## FAILURE
 
-Dimension errors, confusing probability with likelihood, independence assumptions, biased samples, p-value misuse, ill-conditioning, floating-point cancellation, incorrect chain-rule paths, saddle points, exploding gradients, and drawing causal claims from correlations.
+Break dimension assumptions, independence assumptions, biased samples, p-value
+misuse, ill-conditioning, cancellation, incorrect chain-rule paths, unstable
+softmax/logarithms, gradient divergence, and false causal claims from correlation.
 
-## Exit gate
+## VERIFY
 
-Derive matrix-form MSE gradients, verify them by central finite differences, explain conditioning effects, and report statistical uncertainty for a multi-seed model comparison.
-
+Prerequisites: Phase 01 array semantics. Enables ML objectives, backpropagation,
+attention, and reliable experiments. Exit with hand matrix multiplication,
+matrix-form MSE derivation, finite-difference gradient check, conditioning
+experiment, and a multi-seed comparison reporting uncertainty.

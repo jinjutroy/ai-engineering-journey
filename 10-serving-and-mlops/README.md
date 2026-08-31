@@ -1,10 +1,35 @@
 # Phase 10 — Serving and MLOps
 
-## Seven-dimension map
+## Purpose
 
-**WHAT:** serving and MLOps make model behavior reproducible, deployable, observable, and maintainable. **WHY:** an offline artifact is not a reliable product. **WHEN:** apply lifecycle discipline from the first baseline; scale infrastructure only when measurements require it. **WHERE:** across data/version pipelines, registries, deployment, inference, and monitoring. **WHO:** training jobs produce artifacts; registries and deployment systems promote them; services consume them; SRE/ML teams operate them. **HOW:** version data/code/config/artifacts, test contracts, package immutably, load test, canary, monitor SLOs and quality, and retain rollback. **FAILURE:** skew, incompatible artifacts, cold starts, overload, retry storms, silent drift, missing lineage, alert fatigue, privacy-unsafe logs, and rollback that does not restore dependent assets.
+Make AI behavior reproducible, deployable, observable, and maintainable. Keep
+infrastructure depth proportional to the AI-system problem; this is not a
+Kubernetes or Terraform specialization.
 
-## Exit gate
+## WHAT / WHY / WHEN / WHERE / WHO
 
-Ship a versioned service with reproducible build, schema validation, health/readiness, batch policy, load-test results, SLOs, metrics/traces, canary plan, and tested rollback.
+Serving connects versioned models and data contracts to inference APIs and
+operators. It spans packaging, deployment, batching, streaming, caching,
+autoscaling, GPU/VRAM, health checks, rollback, tracing, and quality/cost
+monitoring. Training produces artifacts; services consume them; operators own
+SLOs, recovery, and lineage.
 
+## HOW
+
+Separate prefill from decode. Measure latency distributions, throughput,
+batching trade-offs, memory limits, cost/request, cache behavior, fallbacks,
+provider failure, and version compatibility. Use schema validation, immutable
+artifacts, canary/rollback, load tests, and privacy-safe telemetry.
+
+## FAILURE
+
+Break training/serving skew, incompatible artifacts, cold starts, overload,
+retry storms, cache poisoning, silent drift, alert fatigue, unsafe logs,
+provider outages, and rollback dependencies.
+
+## VERIFY
+
+Prerequisites: Phase 07 inference and Phase 03 evaluation. Enables Phase 11
+production ownership and Phase 13 defense. Exit with a versioned service,
+reproducible build, readiness/health checks, SLOs, load/cost report, traces,
+canary plan, tested fallback, and rollback evidence.

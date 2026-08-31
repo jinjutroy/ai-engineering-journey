@@ -1,26 +1,34 @@
 # Phase 04 — Neural Networks from First Principles
 
-## Objective
+## Purpose
 
-Understand a neural network as a parameterized computation graph and training as numerical optimization—not as a sequence of library layers.
+Understand a neural network as a parameterized computation graph and training
+as numerical optimization, not as a sequence of library calls.
 
 ## WHAT / WHY / WHEN / WHERE / WHO
 
-Neural networks compose affine transformations and nonlinearities to learn flexible functions. Depth supports reusable hierarchical computation. They are appropriate when task/data complexity warrants learned representations, but not automatically better for small structured datasets or strict interpretability/latency constraints. Layers produce activations; losses produce scalar objectives; reverse-mode autodiff produces gradients; optimizers consume gradients and update parameters.
+Affine layers and nonlinearities compose flexible functions. During training,
+the forward graph produces predictions and loss; reverse-mode autodiff produces
+gradients; an optimizer updates parameters. Use this capacity only when the
+data/task justifies it. The learner must own the derivative and gradient
+contracts; PyTorch is a comparison oracle after the manual version.
 
 ## HOW
 
-Study `perceptron/`, `activation-functions/`, `loss-functions/`, `forward-propagation/`, `backpropagation/`, `gradient-descent/`, then `training/`. Build scalar reverse-mode autodiff first, then a vectorized two-layer MLP. Check every parameter gradient using central differences:
-
-\[
-\frac{\partial L}{\partial \theta_i}\approx \frac{L(\theta_i+\epsilon)-L(\theta_i-\epsilon)}{2\epsilon}
-\]
+Build scalar reverse-mode autodiff, vectorized layers, an MLP, losses, and a
+training loop. Derive backpropagation with the chain rule and verify each
+parameter with central finite differences. Make a tiny batch overfit before
+training a nonlinear toy task.
 
 ## FAILURE
 
-Symmetry from initialization, saturated activations, dead units, exploding/vanishing gradients, unstable softmax/logarithms, wrong loss reduction, stale gradients, incorrect broadcasting, failure to switch train/eval behavior, and data/label bugs disguised as optimization problems.
+Break symmetry, activation saturation, dead units, exploding/vanishing
+gradients, unstable softmax/logs, wrong loss reduction, stale gradients,
+broadcasting, train/eval mode, bad learning rate, and label pipelines.
 
-## Exit gate
+## VERIFY
 
-The scalar autodiff engine and MLP pass gradient checks, overfit a tiny batch, learn a nonlinear toy task, and include debug evidence for at least one broken gradient and one unstable loss.
-
+Prerequisites: Phase 01 tensors and Phase 02 calculus/optimization. Enables
+Phase 05 deep architectures and Phase 06 attention. Exit with scalar autodiff,
+a gradient-checked MLP, tiny-batch overfit evidence, and debug reports for an
+incorrect gradient, numerical instability, and learning-rate divergence.

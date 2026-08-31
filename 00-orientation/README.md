@@ -34,6 +34,35 @@ Use this flow for every AI feature:
 For each arrow, identify the owner, contract, trust boundary, failure mode,
 and fallback. A model is only one component in this flow.
 
+## Two system mental models
+
+```text
+Traditional software:  Input → Explicit rules → Output
+
+Machine learning:     Data + Objective + Learning algorithm
+                                      ↓
+                              Model parameters
+                                      ↓
+                          Model → Prediction → Evaluation
+```
+
+The learned model changes when data, objective, algorithm, or evaluation
+changes. This is why an ML system needs data and experiment governance in
+addition to ordinary application code.
+
+## AI system vocabulary
+
+Treat these as separate contracts: `model` (learned mapping), `data` (source
+observations), `context` (selected task input), `state` (current workflow
+variables), `memory` (externalized experience), `tools` (environment
+capabilities), `policy` (allowed behavior), `evaluation` (evidence of quality),
+`environment` (systems affected by actions), and `observability` (signals that
+make behavior diagnosable).
+
+For AI-native development, the human owns problem framing, architecture,
+constraints, approval, and verification. AI agents may plan, implement, test,
+and execute only inside explicit permissions and rollback boundaries.
+
 ## Core questions
 
 - What problem or decision are we trying to improve?
@@ -89,6 +118,8 @@ and record unresolved points in [phase00-evidence.md](phase00-evidence.md).
   and security.
 - Explain why “the model returned JSON” does not prove the system is correct.
 - Defend whether to build, buy, or avoid AI for the chosen feature.
+- Label each important statement as fact, observation, inference, hypothesis,
+  unknown, or conflict; name the evidence needed to upgrade it.
 
 ## Deliberate break lab
 

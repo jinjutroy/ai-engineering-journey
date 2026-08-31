@@ -4,6 +4,7 @@
 - **Observed:**
 - **First bad version / environment:**
 - **Impact:**
+- **Suspected layer:** problem | data | context | retrieval | memory | model | inference | tool/environment | serving
 
 ## Minimal reproduction
 
@@ -23,6 +24,9 @@ Record checks for data, shape, dtype, device, range, forward values, loss, gradi
 
 Explain the causal mechanism, not only the line that crashed.
 
+Classify supporting statements as FACT, OBSERVATION, INFERENCE, HYPOTHESIS,
+UNKNOWN, or CONFLICT. Record provenance for important evidence.
+
 ## Fix and verification
 
 Add a regression test, compare against a correctness oracle, and check side effects.
@@ -30,4 +34,3 @@ Add a regression test, compare against a correctness oracle, and check side effe
 ## Prevention
 
 Which interface, assertion, monitor, review, or documentation change makes recurrence less likely?
-

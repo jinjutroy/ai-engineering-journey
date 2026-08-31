@@ -4,7 +4,7 @@ This repository is a long-term laboratory for becoming an AI engineer who can ex
 
 The learning loop is:
 
-> **Understand → Implement → Experiment → Break → Debug → Optimize → Apply**
+> **Understand → Explain → Derive → Implement → Experiment → Break → Debug → Measure → Optimize → Verify → Apply → Document**
 
 ## Start here
 
@@ -31,6 +31,19 @@ The learning loop is:
 | 10 Serving and MLOps | How does a model become a reliable service? | Versioned, observable inference service |
 | 11 Production systems | How do quality, cost, latency, and security interact? | Architecture review and failure drills |
 | 12 Capstones | Can I own an AI system end to end? | Reproducible project with design and incident docs |
+| 13 Graduation | Can I defend a complete AI system under failure and change? | Graduation system, evaluation suite, recovery drills, and technical defense |
+
+Cross-cutting tracks are required throughout the phases: [Context Engineering](cross-cutting/context-engineering.md), [Memory Engineering](cross-cutting/memory-engineering.md), and [Evidence & Reliability](cross-cutting/evidence-and-reliability.md).
+
+## System mental model
+
+Reason through the full chain:
+
+`Requirement → Problem formulation → Mathematical model → Learning mechanism → Model → Inference → Context → Retrieval → Memory → Agent → Evaluation → Serving → Production`
+
+When something fails, trace backward from the output to the decision, context, retrieval, memory, tools/environment, model behavior, inference, and underlying mechanism. A model is one component of the system, not the system itself.
+
+For AI-native development, the human owns problem framing, architecture, constraints, approval, and verification. Agents may plan, implement, test, and execute only within explicit boundaries.
 
 Frameworks are allowed only after the underlying mechanism has been implemented or explained. The framework exercise must identify what it abstracts, what control is lost, and how to debug below it.
 
@@ -41,7 +54,8 @@ Frameworks are allowed only after the underlying mechanism has been implemented 
 - A notebook is for exploration; reusable logic belongs in `src/` and tests.
 - Raw data is immutable. Generated data and model artifacts are ignored by Git.
 - Every claim about improvement requires a baseline, metric, controlled change, and repeated run.
-- Every major concept uses **WHAT / WHY / WHEN / WHERE / WHO / HOW / FAILURE**.
+- Every major concept uses **WHAT / WHY / WHEN / WHERE / WHO / HOW / FAILURE / VERIFY**, plus prerequisites and measurable exit evidence.
+- Context, memory, provenance, evidence, security, cost, latency, and observability are part of the design from the beginning.
 
 ## Environment
 

@@ -8,6 +8,10 @@
 
 Write a falsifiable prediction and mechanism.
 
+## Expected behavior
+
+State what should happen if the implementation and hypothesis are correct.
+
 ## Design
 
 - Independent variable:
@@ -18,6 +22,7 @@ Write a falsifiable prediction and mechanism.
 - Seed/repetition policy:
 - Baseline:
 - Acceptance threshold:
+- Failure deliberately tested:
 - Compute/environment:
 
 ## Procedure
@@ -36,3 +41,7 @@ Confounders, measurement errors, distribution mismatch, multiple comparisons, an
 
 Supported, rejected, or inconclusive; then state the next engineering action.
 
+## Verification
+
+Name the correctness oracle, regression test, provenance of the data, and the
+claim this experiment does **not** establish.

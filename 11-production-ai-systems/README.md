@@ -1,10 +1,33 @@
 # Phase 11 — Production AI Systems
 
-## Seven-dimension map
+## Purpose
 
-**WHAT:** a production AI system is a sociotechnical distributed system with probabilistic components. **WHY:** usefulness depends on quality, reliability, security, privacy, latency, cost, and recovery together. **WHEN:** apply system design whenever model output affects users or operations. **WHERE:** end to end, including feedback and governance. **WHO:** users, operators, domain owners, engineers, auditors, attackers, and upstream providers. **HOW:** define SLOs and threat models, make boundaries/versioning explicit, design degradation and rollback, evaluate offline and online, capacity plan, and run incidents. **FAILURE:** correlated provider failure, cascading timeouts, feedback corruption, cross-tenant leaks, data residency violations, unsafe automation, metric gaming, undetected quality regression, and unowned incidents.
+Design for quality, reliability, security, privacy, cost, performance,
+governance, observability, and recovery together.
 
-## Exit gate
+## WHAT / WHY / WHEN / WHERE / WHO
 
-Write and defend a design doc under concrete traffic, risk, and budget constraints; execute load, dependency, security, and quality-regression drills; publish postmortems.
+A production AI system is a sociotechnical distributed system with probabilistic
+components. Its boundary includes users, data, model, context, retrieval,
+memory, tools, providers, feedback, operators, and governance. Engineers define
+controls; domain owners define acceptable outcomes; operators detect and
+recover; security owners test abuse paths.
 
+## HOW
+
+Define SLOs, threat models, evidence/provenance rules, authorization, privacy
+boundaries, quality gates, cost budgets, fallbacks, circuit breaking, human
+approval, incident response, and postmortems. Practice detection → containment
+→ recovery → verification → prevention.
+
+## FAILURE
+
+Drill prompt injection, PII/data leakage, cross-tenant access, provider outage,
+model failure, timeout cascades, rate limits, quality regression, corrupted
+feedback, unsafe automation, stale memory, context overflow, and 5x cost.
+
+## VERIFY
+
+Prerequisites: Phases 08–10 plus Context, Memory, and Evidence tracks. Enables
+Phase 12/13 system ownership. Exit with design drills, security tests,
+observability traces, recovery evidence, and postmortems with preventive actions.

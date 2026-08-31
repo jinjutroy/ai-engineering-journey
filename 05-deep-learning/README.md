@@ -1,22 +1,35 @@
-# Phase 05 — Deep Learning
+# Phase 05 — Deep Learning Architectures and Stability
 
-## Objective
+## Purpose
 
-Train deeper architectures while reasoning about inductive bias, information flow, stability, memory, and compute.
+Learn why architectures encode inductive bias and how information, gradients,
+memory, and compute move through deeper models.
 
 ## WHAT / WHY / WHEN / WHERE / WHO
 
-Deep learning uses multi-layer neural networks to learn task-relevant representations, especially for high-dimensional perception and sequences. CNNs encode locality/translation structure; RNNs and LSTMs process recurrent state; normalization, regularization, and optimization techniques make training/generalization tractable. These components live in the model/training layers and interact with accelerators, data pipelines, loss design, and serving constraints.
+CNNs encode locality and weight sharing; RNNs encode sequential state; LSTMs
+add gates to preserve useful information. Normalization, initialization,
+regularization, and optimization shape training dynamics. Study LSTM only to
+understand recurrence limits and why attention becomes attractive; do not make
+it a second specialization.
 
 ## HOW
 
-Implement a naive convolution before using optimized kernels; unroll an RNN through time; derive LSTM gates; compare batch/layer normalization semantics; distinguish optimization aids from regularization; profile activation and parameter memory. Maintain an ablation table in which each run changes one declared factor.
+Implement a naive convolution, unroll an RNN through time, inspect LSTM gates,
+and compare normalization, initialization, dropout, and weight decay through
+single-variable ablations. Profile parameter, activation, and optimizer-state
+memory. Connect each architecture to data locality, sequence length, latency,
+and deployment constraints.
 
 ## FAILURE
 
-Receptive field mismatch, sequence padding errors, hidden-state leakage, vanishing/exploding gradients, normalization leakage, batch-size sensitivity, over-regularization, optimizer divergence, mixed-precision underflow/overflow, out-of-memory failure, and irreproducible kernels.
+Break receptive fields, padding, hidden-state reset, sequence masking,
+vanishing/exploding gradients, normalization leakage, batch sensitivity,
+over-regularization, mixed-precision ranges, memory limits, and reproducibility.
 
-## Exit gate
+## VERIFY
 
-Train one image and one sequence model, explain why each architecture fits, reproduce a failure, restore stability from evidence, and report quality/latency/memory trade-offs.
-
+Prerequisites: Phase 04 networks and Phase 02 gradients. Enables transformer
+motivation and architecture judgment. Exit with one image and one sequence
+experiment, a stability ablation, a reproduced failure, and a quality/latency/
+memory trade-off report.
