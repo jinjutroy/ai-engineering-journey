@@ -17,6 +17,20 @@ Status vocabulary: `not-started`, `learning`, `implemented`, `verified`, `master
 - Automated checks: Ruff passed; pytest 9/9 passed on 2026-08-10
 - Learning status: unchanged; environment setup and passing repository tests do not prove topic mastery
 
+## Phase 00 evidence checklist
+
+- [ ] Draw the AI system flow from problem to feedback.
+- [ ] Explain AI, ML, DL, and GenAI with one concrete example.
+- [ ] Explain model, context, and AI system boundaries.
+- [ ] Trace one input from source data to product action.
+- [ ] Analyze five failure scenarios and define fallbacks.
+- [ ] Decide whether one feature should use rules, ML, DL, GenAI, or no AI.
+- [ ] Explain why valid output format does not prove correctness.
+- [ ] Complete the [Phase 00 knowledge check](00-orientation/knowledge-check/index.html) with at least 8/10.
+- [ ] Complete a notes-free review and record the date below.
+
+Notes/evidence: `00-orientation/phase00-evidence.md`
+
 ## Phase ledger
 
 | Phase | Status | Implementation evidence | Failure/debug evidence | Application evidence | Review dates |

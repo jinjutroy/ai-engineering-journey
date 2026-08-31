@@ -4,9 +4,21 @@ This is a dependency map, not a deadline. A typical part-time path may take 18�
 
 ## Phase sequence and gates
 
-### Phase 00 — Orientation
+### Phase 00 — Orientation and AI System Flow
 
-Learn the vocabulary, AI stack, role boundaries, and lifecycle. Gate: draw and explain how data becomes a deployed prediction, including feedback and monitoring.
+Build one stable mental model before studying algorithms or tools. Trace one
+AI feature through this flow:
+
+```text
+problem → policy/risk → data/context → mechanism choice
+→ model/system output → validation/decision → product action
+→ monitoring/feedback → iteration
+```
+
+Understand the boundary between AI, ML, DL, GenAI, model, context, and the
+surrounding system. Gate: draw and explain the complete flow, identify owners
+and failure boundaries, analyze five failure scenarios, and defend build-versus-buy
+for one feature. Code is optional for this phase.
 
 ### Phase 01 — Programming foundation
 
@@ -14,11 +26,93 @@ Deepen Python, NumPy, pandas, and PyTorch fundamentals: memory model, vectorizat
 
 Gate: implement and test vectorized linear regression, explain time/space complexity, and profile loop versus vectorized versions.
 
-### Phase 02 — Mathematics
+### Phase 02 — Mathematics for AI Engineering
 
-Study linear algebra, probability, statistics, calculus, and optimization in the order demanded by implementations. Derivations must be paired with numerical experiments.
+Study mathematics through implementation. Every topic must include:
+explanation, derivation, numerical example, failure case, and application.
 
-Gate: derive mean-squared-error gradients in matrix form and verify them with finite differences.
+#### 02A — Linear Algebra
+
+Topics:
+
+- Scalars, vectors, matrices, tensors
+- Vector addition and scalar multiplication
+- Dot product and cosine similarity
+- Matrix multiplication and transpose
+- Shape reasoning and broadcasting
+- Norms and distances
+- Projections and least squares
+- Rank and linear dependence
+- Eigenvalues and eigenvectors
+- SVD and dimensionality reduction
+- Conditioning and numerical stability
+
+Applications:
+
+- Linear regression
+- Neural-network layers
+- Embeddings
+- Attention and Transformer projections
+
+Learning gate:
+
+- [ ] Calculate matrix multiplication by hand
+- [ ] Explain every shape in `XW + b`
+- [ ] Derive the linear-regression solution
+- [ ] Explain rank and conditioning
+- [ ] Explain why attention uses `QKᵀ`
+- [ ] Write one failure note about shape or numerical instability
+
+#### 02B — Calculus
+
+Topics:
+
+- Functions and limits
+- Derivatives
+- Partial derivatives
+- Gradients
+- Chain rule
+- Computational graphs
+- Jacobian intuition
+- Finite-difference approximation
+- Gradient descent
+- Vanishing and exploding gradients
+
+Applications:
+
+- MSE gradient
+- Logistic-loss gradient
+- Backpropagation
+- Neural-network training
+- Attention gradients
+
+Learning gate:
+
+- [ ] Derive the derivative of MSE
+- [ ] Explain the chain rule using a computational graph
+- [ ] Verify a gradient with finite differences
+- [ ] Explain learning-rate divergence
+- [ ] Explain vanishing and exploding gradients
+- [ ] Write one debug report about an incorrect gradient
+
+#### 02C — Optimization
+
+Topics:
+
+- Convexity intuition
+- Learning rate
+- Momentum
+- Adaptive optimizers
+- Regularization
+- Conditioning
+- Saddle points
+- Generalization versus optimization
+
+Learning gate:
+
+- [ ] Compare different learning rates
+- [ ] Explain why training can diverge
+- [ ] Explain the difference between optimization failure and data failure
 
 ### Phase 03 — Machine learning
 

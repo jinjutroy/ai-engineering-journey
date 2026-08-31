@@ -18,7 +18,7 @@ The learning loop is:
 
 | Phase | Question answered | Exit evidence |
 |---|---|---|
-| 00 Orientation | What is the field and where does an AI engineer fit? | Explain the stack and trace one request end to end |
+| 00 Orientation | What is AI and how does an AI system work end to end? | Core system flow, context/model distinction, failure analysis, and build-versus-buy decision |
 | 01 Programming | Can I manipulate data and tensors without magic? | Tested Python/NumPy implementation and profiling notes |
 | 02 Mathematics | Can I derive the operations learning depends on? | Derivations plus numerical verification |
 | 03 Machine learning | Can I design and evaluate a valid learning experiment? | From-scratch baseline with leakage checks |
@@ -64,5 +64,5 @@ The core examples intentionally depend only on NumPy. PyTorch enters after manua
 
 ## Current first milestone
 
-Complete Phase 00, then run the three foundation implementations in `src/ai_journey`: linear regression, reverse-mode autodiff, and scaled dot-product attention. Do not rush past a failed gradient check; it is the first real debugging gate.
+Complete Phase 00 by producing the system-flow and failure-analysis evidence in `00-orientation/phase00-evidence.md`. Code is optional here; the foundation implementations in `src/ai_journey` are supporting artifacts for later implementation-focused phases.
 

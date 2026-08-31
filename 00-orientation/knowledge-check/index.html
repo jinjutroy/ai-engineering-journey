@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phase 00 Knowledge Check</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #5c667a;
+      --line: #d9dfeb;
+      --panel: #ffffff;
+      --soft: #f4f7fb;
+      --accent: #2457d6;
+      --good: #087443;
+      --bad: #b42318;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--soft);
+      color: var(--ink);
+      font: 16px/1.55 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main { max-width: 920px; margin: 0 auto; padding: 32px 18px 56px; }
+    header, section, fieldset {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 5px 18px rgba(23, 32, 51, 0.05);
+    }
+    header { padding: 28px; margin-bottom: 20px; }
+    section { padding: 22px; margin: 18px 0; }
+    h1, h2 { line-height: 1.2; margin-top: 0; }
+    h1 { margin-bottom: 8px; }
+    h2 { font-size: 1.15rem; }
+    .muted { color: var(--muted); }
+    .flow {
+      overflow-x: auto;
+      padding: 14px;
+      background: #eef3ff;
+      border-radius: 10px;
+      color: #173b9b;
+      white-space: nowrap;
+    }
+    fieldset { padding: 18px; margin: 16px 0; }
+    legend { font-weight: 700; padding: 0 6px; }
+    label { display: block; margin: 9px 0; cursor: pointer; }
+    input[type="radio"] { margin-right: 8px; }
+    textarea {
+      width: 100%;
+      min-height: 84px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      font: inherit;
+    }
+    button {
+      border: 0;
+      border-radius: 9px;
+      padding: 11px 16px;
+      margin: 4px 8px 4px 0;
+      background: var(--accent);
+      color: white;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button.secondary { background: #e8edf7; color: var(--ink); }
+    #result { font-weight: 700; margin-top: 14px; }
+    .good { color: var(--good); }
+    .bad { color: var(--bad); }
+    details { margin-top: 20px; }
+    summary { cursor: pointer; font-weight: 700; }
+    .answer { margin: 10px 0; padding: 10px 12px; background: #f8fafc; border-left: 4px solid var(--accent); }
+    @media (max-width: 600px) {
+      main { padding: 18px 10px 40px; }
+      header, section, fieldset { border-radius: 10px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Phase 00 — Knowledge Check</h1>
+    <p class="muted">This check tests the core AI-system mental model. It is self-assessment, not a coding test.</p>
+    <div class="flow">problem → policy/risk → data/context → mechanism → output → validation/decision → action → monitoring/feedback</div>
+  </header>
+
+  <form id="quiz">
+    <section>
+      <h2>Core questions</h2>
+
+      <fieldset>
+        <legend>1. Which statement is most accurate?</legend>
+        <label><input type="radio" name="q1" value="a"> AI, ML, DL, and GenAI are identical names.</label>
+        <label><input type="radio" name="q1" value="b"> AI is broad; ML learns from data; DL uses deep neural networks; GenAI creates new content.</label>
+        <label><input type="radio" name="q1" value="c"> ML is broader than AI.</label>
+        <label><input type="radio" name="q1" value="d"> GenAI never uses machine learning.</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. What is a model?</legend>
+        <label><input type="radio" name="q2" value="a"> The whole product and its user interface.</label>
+        <label><input type="radio" name="q2" value="b"> A component that transforms input into a prediction or generated output.</label>
+        <label><input type="radio" name="q2" value="c"> A database containing all user data.</label>
+        <label><input type="radio" name="q2" value="d"> A guarantee that the output is correct.</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. What is context?</legend>
+        <label><input type="radio" name="q3" value="a"> Only the model weights.</label>
+        <label><input type="radio" name="q3" value="b"> Information available to the model at request time, such as instructions, history, evidence, or tool results.</label>
+        <label><input type="radio" name="q3" value="c"> The hardware used for training.</label>
+        <label><input type="radio" name="q3" value="d"> A permanent change to the model.</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Which is the correct system flow?</legend>
+        <label><input type="radio" name="q4" value="a"> Model → data → problem → deployment.</label>
+        <label><input type="radio" name="q4" value="b"> Problem → data/context → mechanism → output → validation/decision → monitoring.</label>
+        <label><input type="radio" name="q4" value="c"> Prompt → model → trust the answer.</label>
+        <label><input type="radio" name="q4" value="d"> UI → model → no further controls.</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. When is ordinary software often better than AI?</legend>
+        <label><input type="radio" name="q5" value="a"> When rules are clear and exactness is required.</label>
+        <label><input type="radio" name="q5" value="b"> Never; AI is always more flexible.</label>
+        <label><input type="radio" name="q5" value="c"> When there is no measurable objective.</label>
+        <label><input type="radio" name="q5" value="d"> When the cost of errors is unacceptable but no control exists.</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. Does valid JSON prove that a model response is correct?</legend>
+        <label><input type="radio" name="q6" value="a"> Yes, valid syntax proves correctness.</label>
+        <label><input type="radio" name="q6" value="b"> Yes, if the response has all expected fields.</label>
+        <label><input type="radio" name="q6" value="c"> No. Format validation does not prove factual correctness, safety, or authorization.</label>
+        <label><input type="radio" name="q6" value="d"> Only for financial decisions.</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>7. What should happen before a model output triggers a sensitive action?</legend>
+        <label><input type="radio" name="q7" value="a"> The output should be trusted if confidence is high.</label>
+        <label><input type="radio" name="q7" value="b"> Validate the output against policy and business rules; require approval where needed.</label>
+        <label><input type="radio" name="q7" value="c"> Hide the output from the user.</label>
+        <label><input type="radio" name="q7" value="d"> Run the model again until it agrees.</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>8. Which is a context failure?</legend>
+        <label><input type="radio" name="q8" value="a"> The context is missing, stale, irrelevant, conflicting, or malicious.</label>
+        <label><input type="radio" name="q8" value="b"> The model has a shorter name.</label>
+        <label><input type="radio" name="q8" value="c"> The UI uses a different color.</label>
+        <label><input type="radio" name="q8" value="d"> The database has an index.</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>9. Why is monitoring needed after deployment?</legend>
+        <label><input type="radio" name="q9" value="a"> Training metrics never matter.</label>
+        <label><input type="radio" name="q9" value="b"> Production data, user behavior, latency, cost, and failure patterns can change.</label>
+        <label><input type="radio" name="q9" value="c"> Monitoring makes the model more intelligent automatically.</label>
+        <label><input type="radio" name="q9" value="d"> Only to count users.</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>10. What is the best first question for choosing ML, DL, or GenAI?</legend>
+        <label><input type="radio" name="q10" value="a"> Which model is most popular?</label>
+        <label><input type="radio" name="q10" value="b"> Which framework has the most features?</label>
+        <label><input type="radio" name="q10" value="c"> What decision or task is needed, what data exists, and what errors are acceptable?</label>
+        <label><input type="radio" name="q10" value="d"> Can the model generate a confident answer?</label>
+      </fieldset>
+
+      <button type="button" id="scoreButton">Check score</button>
+      <button type="button" class="secondary" id="resetButton">Reset</button>
+      <div id="result" aria-live="polite"></div>
+
+      <details>
+        <summary>Show explanations</summary>
+        <div class="answer">1. AI is the broad field; ML and DL describe learning methods; GenAI describes content generation.</div>
+        <div class="answer">2. A model is one component that turns input into output; it does not guarantee correctness.</div>
+        <div class="answer">3. Context is request-time information, including instructions, history, evidence, and tools.</div>
+        <div class="answer">4. A useful system starts from a problem and continues through validation, action, and monitoring.</div>
+        <div class="answer">5. Rules are preferred when the policy is stable, explicit, and exact.</div>
+        <div class="answer">6. Valid structure is not the same as correct, safe, or authorized content.</div>
+        <div class="answer">7. Sensitive actions need validation, policy enforcement, and sometimes human approval.</div>
+        <div class="answer">8. Context can be incomplete, irrelevant, stale, conflicting, malicious, or sensitive.</div>
+        <div class="answer">9. Real-world inputs, behavior, dependencies, quality, latency, and cost change after deployment.</div>
+        <div class="answer">10. Choose technology from the task, data, constraints, and acceptable failure—not popularity.</div>
+      </details>
+    </section>
+
+    <section>
+      <h2>Reflection</h2>
+      <p class="muted">Write these answers in <code>phase00-evidence.md</code> after completing the check.</p>
+      <label>Can you draw the complete AI system flow without notes?<textarea name="reflection1"></textarea></label>
+      <label>What is one situation where you would avoid AI?<textarea name="reflection2"></textarea></label>
+      <label>What can go wrong between model output and final product action?<textarea name="reflection3"></textarea></label>
+    </section>
+  </form>
+</main>
+<script>
+  const answers = { q1: 'b', q2: 'b', q3: 'b', q4: 'b', q5: 'a', q6: 'c', q7: 'b', q8: 'a', q9: 'b', q10: 'c' };
+  const quiz = document.getElementById('quiz');
+  const result = document.getElementById('result');
+
+  document.getElementById('scoreButton').addEventListener('click', () => {
+    let score = 0;
+    let answered = 0;
+    for (const [question, answer] of Object.entries(answers)) {
+      const selected = quiz.querySelector(`input[name="${question}"]:checked`);
+      if (selected) {
+        answered += 1;
+        if (selected.value === answer) score += 1;
+      }
+    }
+    if (answered < Object.keys(answers).length) {
+      result.className = 'bad';
+      result.textContent = `Please answer all 10 questions first (${answered}/10 answered).`;
+      return;
+    }
+    result.className = score >= 8 ? 'good' : 'bad';
+    result.textContent = `Score: ${score}/10 — ${score >= 8 ? 'Phase 00 core understanding is ready for review.' : 'Review the four documents and retry.'}`;
+  });
+
+  document.getElementById('resetButton').addEventListener('click', () => {
+    quiz.reset();
+    result.textContent = '';
+    result.className = '';
+  });
+</script>
+</body>
+</html>

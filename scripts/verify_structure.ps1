@@ -5,7 +5,9 @@ $required = @(
     'README.md', 'ROADMAP.md', 'LEARNING_RULES.md', 'PROGRESS.md', 'GLOSSARY.md',
     '00-orientation', '01-programming-foundation', '02-mathematics',
     '03-machine-learning', '04-neural-networks', '05-deep-learning',
-    '06-transformers', '07-llm', 'templates', 'src', 'tests'
+    '06-transformers', '07-llm', 'templates', 'src', 'tests',
+    '00-orientation/concepts', '00-orientation/practice',
+    '00-orientation/knowledge-check', '00-orientation/knowledge-check/index.html'
 )
 
 $missing = foreach ($relative in $required) {
