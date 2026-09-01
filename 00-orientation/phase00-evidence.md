@@ -136,7 +136,7 @@ To be scheduled after the Phase 00 knowledge check.
 
 ## 10. Session knowledge check
 
-Oral check completed: 3/3.
+Guided knowledge check completed: 10/10 on 2026-09-01.
 
 - Model versus context: correct, with the refinement that a model is a learned
   mapping and context is request-time information supplied to it.
@@ -145,6 +145,6 @@ Oral check completed: 3/3.
 - Valid JSON versus correctness: correct; syntax validity does not prove
   factual correctness, safety, authorization, or usefulness.
 
-This session establishes `explained` evidence. Phase 00 is not yet `verified`
-until the HTML knowledge check and the remaining checklist evidence are
-completed.
+This session establishes `verified` evidence for the core conceptual check.
+The full Phase 00 gate still requires the HTML knowledge check and the
+remaining checklist evidence.
