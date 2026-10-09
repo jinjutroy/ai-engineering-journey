@@ -79,4 +79,3 @@ The core examples intentionally depend only on NumPy. PyTorch enters after manua
 ## Current first milestone
 
 Complete Phase 00 by producing the system-flow and failure-analysis evidence in `00-orientation/phase00-evidence.md`. Code is optional here; the foundation implementations in `src/ai_journey` are supporting artifacts for later implementation-focused phases.
-

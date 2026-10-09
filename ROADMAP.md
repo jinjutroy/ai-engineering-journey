@@ -71,6 +71,8 @@ Fast-moving tools are studied only as replaceable examples of mechanisms:
 For every tool, document its abstraction boundary, lost control, failure modes,
 debugging escape hatch, and minimal framework-free equivalent.
 
+For the nightly execution rhythm and the first four weeks, use [STUDY_PLAN.md](STUDY_PLAN.md).
+
 ## Phase sequence and gates
 
 ### Phase 00 — Orientation and AI System Flow
@@ -317,6 +319,33 @@ memory contracts, evaluation report, cost/latency report, trace examples,
 security tests, recovery drills, and final technical defense. This demonstrates
 system thinking; it does not pretend one personal project replaces years of
 organizational production experience.
+
+## Career specialization checkpoint — Frontier Deployed Engineer
+
+Keep Phases 00–13 as the shared AI engineering foundation. After the agent,
+serving, and production-system foundations in Phases 09–11, evaluate
+**Frontier Deployed Engineer (FDE)** as an optional specialization rather than
+a replacement roadmap.
+
+The overlap is substantial: LLM applications and agents, evaluation, security,
+deployment, observability, reliability, and cost control. The FDE specialization
+adds customer- and workflow-facing ownership: discover the right business
+problem, map the existing process and constraints, integrate with enterprise
+systems, coordinate security and governance reviews, drive adoption, measure
+business outcomes, and hand the system over to its long-term operators.
+
+To test fit, adapt the third Phase 12 capstone into an FDE-style engagement. In
+addition to the technical artifacts, produce a stakeholder map, current-workflow
+and non-AI baseline, adoption plan, outcome metric, security/governance review,
+deployment record, operator training, and handover document. The gate is not a
+demo: intended users adopt the system in a real or realistically simulated
+workflow, operators can run and recover it, and evidence shows whether it
+improves the target outcome.
+
+Reference role model: Anthropic's
+[Claude Frontier Academy](https://www.anthropic.com/news/claude-frontier-academy).
+The roadmap remains vendor-neutral; Claude is one implementation context, not
+the curriculum boundary.
 
 ## Cross-cutting disciplines
 
